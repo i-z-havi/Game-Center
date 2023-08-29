@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Images\Beuton.jpeg" />
+    <None Remove="Images\Bomb.png" />
+    <None Remove="Images\Car.png" />
     <None Remove="Images\PENNY BIRTHDAY.jpeg" />
     <None Remove="Images\SimonSaysBlue.jpg" />
     <None Remove="Images\SimonSaysGreen.jpg" />
@@ -18,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Bomb.png" />
+    <Resource Include="Images\Car.png" />
     <Resource Include="Images\SimonSaysYellow.jpg" />
   </ItemGroup>
 
@@ -30,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Projects\CarProject\" />
     <Folder Include="Projects\SimonSays\Models\" />
   </ItemGroup>
 

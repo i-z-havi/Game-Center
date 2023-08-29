@@ -26,7 +26,6 @@ namespace Game_Center.Projects.SimonSays
         private string[] _buttons = new string[] {"Blue","Yellow","Red","Green" };
         private int _stage = 0;
         private int _score = 0;
-        private DispatcherTimer _dispatcherTimer = new DispatcherTimer();
         private bool _isStarted = false;
         private bool _isRunning=false;
 
