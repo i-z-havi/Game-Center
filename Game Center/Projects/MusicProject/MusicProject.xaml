@@ -8,30 +8,42 @@
         Title="MusicProject" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
+        <Image Source="/Images/TrebleClef.png" />
+        <ListView Grid.Column="1" Grid.Row="0">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <!--items go here-->
+            <DataTemplate>
+                <StackPanel>
+                    <RadioButton Name="Ten"></RadioButton>
+                    <RadioButton Name="Nine">-</RadioButton>
+                    <RadioButton Name="Eight"></RadioButton>
+                    <RadioButton Name="Seven">-</RadioButton>
+                    <RadioButton Name="Six"></RadioButton>
+                    <RadioButton Name="Five">-</RadioButton>
+                    <RadioButton Name="Four"></RadioButton>
+                    <RadioButton Name="Three">-</RadioButton>
+                    <RadioButton Name="Two"></RadioButton>
+                    <RadioButton Name="One">-</RadioButton>
+                    <RadioButton Name="Zero"></RadioButton>
+                </StackPanel>
+            </DataTemplate>
+        </ListView>
+        <StackPanel Grid.Column="1" Grid.Row="1"  Orientation="Horizontal">
+            <Button Content="Play" Width="100" Height="50" Margin="50,0,50,0"/>
+            <Button Content="Save" Width="100" Height="50" Margin="50,0,50,0"/>
+            <Button Content="Load" Width="100" Height="50" Margin="50,0,50,0"/>
+        </StackPanel>
+        
     </Grid>
 </Window>

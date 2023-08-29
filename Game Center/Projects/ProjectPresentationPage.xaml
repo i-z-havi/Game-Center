@@ -7,8 +7,38 @@
         mc:Ignorable="d"
         Title="ProjectPresentationPage" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>            <ColumnDefinition Width="0.5*" />            <ColumnDefinition Width="1*" />            <ColumnDefinition Width="0.5*" />        </Grid.ColumnDefinitions>        <Grid.RowDefinitions>            <RowDefinition Height="0.4*" />            <RowDefinition Height="0.6*" />            <RowDefinition Height="1.5*" />            <RowDefinition Height="0.3*" />        </Grid.RowDefinitions>
-        <Label             x:Name="TitleLabel"            Content="Game Center"             Grid.Row="0"             Grid.Column="0"             Grid.ColumnSpan="3"             Background="AliceBlue"            HorizontalContentAlignment="Center"            VerticalContentAlignment="Center" FontFamily="Arial Black" FontSize="40"/>        <Label             x:Name="DateLabel"            Content="Date"             Grid.Row="0"             Grid.Column="2"             Grid.ColumnSpan="3"             Background="AliceBlue"            HorizontalContentAlignment="Center"            VerticalContentAlignment="Center"             FontFamily="Arial Black"             FontSize="20"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.6*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+        <Label 
+            x:Name="TitleLabel"
+            Content="Game Center" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="3" 
+            Background="AliceBlue"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center" FontFamily="Arial Black" FontSize="40"/>
+
+        <Label 
+            x:Name="DateLabel"
+            Content="Date" 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="3" 
+            Background="AliceBlue"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center" 
+            FontFamily="Arial Black" 
+            FontSize="20"
         />
 
         <TextBox
@@ -21,6 +51,13 @@
             TextWrapping="Wrap"
         />
 
-        <Image             x:Name="ProjectImage"             Grid.Column="1"            Grid.Row="2"            Margin="25"            HorizontalAlignment="Center"            VerticalAlignment="Center" MouseLeftButtonUp="OnImageClick"        />  
+        <Image 
+            x:Name="ProjectImage" 
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="25"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" MouseLeftButtonUp="OnImageClick"
+        />  
     </Grid>
 </Window>

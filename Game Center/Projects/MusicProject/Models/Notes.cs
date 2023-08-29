@@ -8,7 +8,7 @@ namespace Game_Center.Projects.MusicProject.Models
 {
     internal class Notes
     {
-        public string Note { get; set; }
+        public int Note { get; set; }
         public Notes() 
         {
 
