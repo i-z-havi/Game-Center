@@ -33,7 +33,7 @@
                 Grid.Column="2" 
                 Grid.ColumnSpan="3" 
                 Background="AliceBlue"
-                HorizontalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
                 VerticalContentAlignment="Center" 
                 FontFamily="Arial Black" 
                 FontSize="15"/>

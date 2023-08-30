@@ -57,7 +57,7 @@ namespace Game_Center
                 "Image3" => "Currency Exchange Rate",
                 "Image4" => "Simon Says",
                 "Image5" => "Tic Tac Toe",
-                "Image6" => "Music Maker",
+                "Image6" => "Song Game",
                 _ => "please pick a game"
             };
         }
@@ -117,7 +117,7 @@ namespace Game_Center
 
         private void OnImage6Click(object sender, MouseButtonEventArgs e)
         {
-            MusicProject music = new MusicProject();
+            MusicProject music = new();
             Hide();
             music.ShowDialog();
             Show();
