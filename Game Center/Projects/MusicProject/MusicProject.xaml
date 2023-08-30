@@ -23,21 +23,24 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <!--items go here-->
+            <ListView.ItemTemplate>
             <DataTemplate>
                 <StackPanel>
-                    <RadioButton Name="Ten"></RadioButton>
-                    <RadioButton Name="Nine">-</RadioButton>
-                    <RadioButton Name="Eight"></RadioButton>
-                    <RadioButton Name="Seven">-</RadioButton>
-                    <RadioButton Name="Six"></RadioButton>
-                    <RadioButton Name="Five">-</RadioButton>
-                    <RadioButton Name="Four"></RadioButton>
-                    <RadioButton Name="Three">-</RadioButton>
-                    <RadioButton Name="Two"></RadioButton>
-                    <RadioButton Name="One">-</RadioButton>
-                    <RadioButton Name="Zero"></RadioButton>
+                        <!--maybe make normal buttons instead of radio?-->
+                        <RadioButton Name="Ten" Height="10" Width="10"></RadioButton>
+                        <RadioButton Name="Nine" Height="10" Width="10">-</RadioButton>
+                        <RadioButton Name="Eight" Height="10" Width="10"></RadioButton>
+                        <RadioButton Name="Seven" Height="10" Width="10">-</RadioButton>
+                        <RadioButton Name="Six" Height="10" Width="10"></RadioButton>
+                        <RadioButton Name="Five" Height="10" Width="10">-</RadioButton>
+                        <RadioButton Name="Four" Height="10" Width="10"></RadioButton>
+                        <RadioButton Name="Three" Height="10" Width="10">-</RadioButton>
+                        <RadioButton Name="Two" Height="10" Width="10"></RadioButton>
+                        <RadioButton Name="One" Height="10" Width="10">-</RadioButton>
+                        <RadioButton Name="Zero" Height="10" Width="10"></RadioButton>
                 </StackPanel>
             </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Column="1" Grid.Row="1"  Orientation="Horizontal">
             <Button Content="Play" Width="100" Height="50" Margin="50,0,50,0"/>

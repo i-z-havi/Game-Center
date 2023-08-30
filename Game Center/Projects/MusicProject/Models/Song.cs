@@ -17,5 +17,15 @@ namespace Game_Center.Projects.MusicProject.Models
             Name = name;
             songNotes = new ObservableCollection<Notes>();
         }
+
+        public void AddNote(Notes note)
+        {
+            songNotes.Add(note);
+        }
+
+        public void UpdateNote(Notes note) 
+        {
+            
+        }
     }
 }

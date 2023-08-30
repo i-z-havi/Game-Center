@@ -1,5 +1,6 @@
 ﻿using Game_Center.Projects;
 using Game_Center.Projects.CurrencyConverter;
+using Game_Center.Projects.MusicProject;
 using Game_Center.Projects.Project_1;
 using Game_Center.Projects.SimonSays;
 using Game_Center.Projects.Tic_Tac_Toe;
@@ -56,7 +57,7 @@ namespace Game_Center
                 "Image3" => "Currency Exchange Rate",
                 "Image4" => "Simon Says",
                 "Image5" => "Tic Tac Toe",
-                "Image6" => "Game No. 6 is a game about lorm ipsum & happy birthday",
+                "Image6" => "Music Maker",
                 _ => "please pick a game"
             };
         }
@@ -111,6 +112,14 @@ namespace Game_Center
             TicTacToe tictac = new TicTacToe();
             Hide();
             tictac.ShowDialog();
+            Show();
+        }
+
+        private void OnImage6Click(object sender, MouseButtonEventArgs e)
+        {
+            MusicProject music = new MusicProject();
+            Hide();
+            music.ShowDialog();
             Show();
         }
     }

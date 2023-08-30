@@ -17,6 +17,7 @@
     <None Remove="Images\SimonSaysGreen.jpg" />
     <None Remove="Images\SimonSaysRed.jpg" />
     <None Remove="Images\SimonSaysYellow.jpg" />
+    <None Remove="Images\TrebleClef.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
     <Resource Include="Images\SimonSaysBlue.jpg" />
     <Resource Include="Images\SimonSaysGreen.jpg" />
     <Resource Include="Images\SimonSaysRed.jpg" />
+    <Resource Include="Images\TrebleClef.png" />
   </ItemGroup>
 
   <ItemGroup>
