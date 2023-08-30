@@ -9,9 +9,11 @@ namespace Game_Center.Projects.MusicProject.Models
     internal class Notes
     {
         public int Note { get; set; }
+        public DateTime Id { get; set; }
         public Notes() 
         {
-
+            Note = -1;
+            Id = DateTime.Now;
         }
     }
 }

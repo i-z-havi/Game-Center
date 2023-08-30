@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_Center.Projects.MusicProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,27 @@ namespace Game_Center.Projects.MusicProject
     /// </summary>
     public partial class MusicProject : Window
     {
+        private Song _song;
+
         public MusicProject()
         {
             InitializeComponent();
+            InitializeSong();
+        }
+
+        private void InitializeSong()
+        {
+            _song=new Song();
+            playBtn.Content = "test two";
+            _song.AddNote(new Notes());
+            _song.AddNote(new Notes());
+            _song.AddNote(new Notes());
+            SongGUI.ItemsSource = _song.songNotes;
+        }
+
+        private void OnNoteClick(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
         }
     }
 }
