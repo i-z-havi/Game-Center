@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace Game_Center.Projects.MusicProject.Models
@@ -19,7 +20,15 @@ namespace Game_Center.Projects.MusicProject.Models
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException("help");
+            if (value is bool isChecked && isChecked)
+            {
+                // The radio button is checked, return the corresponding option string
+                return parameter as string;
+            }
+
+            // The radio button is not checked, return DependencyProperty.UnsetValue
+            // to indicate that no value should be updated in the source property
+            return DependencyProperty.UnsetValue;
         }
     }
 }

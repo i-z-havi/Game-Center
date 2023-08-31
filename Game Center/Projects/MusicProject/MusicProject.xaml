@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:Game_Center.Projects.MusicProject.Models"
         mc:Ignorable="d"
         Title="MusicProject" Height="450" Width="800">
-    <Window.Resources>
-        <local:StringtoBoolConvert x:Key="StringtoBoolConvert"/>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>
@@ -19,6 +16,26 @@
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
         <Image Source="/Images/TrebleClef.png" />
+        <Border x:Name="SongNamePopup" Grid.Column="1" Panel.ZIndex="1" Visibility="Collapsed" CornerRadius="6" BorderBrush="Gray" Background="LightGray" BorderThickness="2" Width="300" Height="100">
+            <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Width="280">
+                <TextBlock Text="Input Name" HorizontalAlignment="Left"/>
+                <TextBox Name="SongNameInput" Margin="0,10,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="84" Margin="0,10,0,0">
+                    <Button x:Name="CancelSave" Height="20" Width="40" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CancelSaveBtn" />
+                    <Button x:Name="ConfirmSave" Height="20" Width="30" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="14,0,0,0" Click="ConfirmSaveBtn" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="LoadSongPopup" Grid.Column="1" Panel.ZIndex="1" Visibility="Collapsed" CornerRadius="6" BorderBrush="Gray" Background="LightGray" BorderThickness="2" Width="300" Height="100">
+            <StackPanel>
+                <TextBlock Text="Play a saved song!" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <ComboBox Name="LoadSongMenu" Width="280"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="84" Margin="0,10,10,0">
+                    <Button x:Name="CancelLoad" Height="20" Width="40" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CancelLoadBtn" />
+                    <Button x:Name="ConfirmLoad" Height="20" Width="30" Content="Load" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="14,0,0,0" Click="ConfirmLoadBtn" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
         <ListView Grid.Column="1" Grid.Row="0" Name="SongGUI">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -28,33 +45,28 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <StackPanel.DataContext>
-                            <local:ViewModelForDataContext/>
-                        </StackPanel.DataContext>
-                        <!--what if instead of binding, it runs an onclick that changes the Note value? we know how to get the parent of smth it shouldnt b hard-->
-                        <!--<RadioButton Name="Ten" IsChecked="{Binding SelectedOption, Converter={StaticResource StringtoBoolConvert}, ConverterParameter=Ten}"></RadioButton>-->
-                        <!--^^use this for template if parent thing doesnt work-->
-                        <RadioButton Name="Ten" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Nine" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Eight" Click="OnNoteClick"></RadioButton>
-                        <RadioButton Name="Seven" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Six" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Five" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Four" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Three" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Two" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="One" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Zero" Click="OnNoteClick">-</RadioButton>
-                        <RadioButton Name="Rest" Click="OnNoteClick" Content="Rest"></RadioButton>
+                        <RadioButton Name="_11"  Click="OnNoteClick">G#</RadioButton>
+                        <RadioButton Name="_10" Click="OnNoteClick">G</RadioButton>
+                        <RadioButton Name="_9"  Click="OnNoteClick">F#</RadioButton>
+                        <RadioButton Name="_8" Click="OnNoteClick">F</RadioButton>
+                        <RadioButton Name="_7" Click="OnNoteClick">E</RadioButton>
+                        <RadioButton Name="_6"  Click="OnNoteClick">D#</RadioButton>
+                        <RadioButton Name="_5"  Click="OnNoteClick">D</RadioButton>
+                        <RadioButton Name="_4"  Click="OnNoteClick">C#</RadioButton>
+                        <RadioButton Name="_3"  Click="OnNoteClick">C</RadioButton>
+                        <RadioButton Name="_2"  Click="OnNoteClick">B</RadioButton>
+                        <RadioButton Name="_1"  Click="OnNoteClick">A#</RadioButton>
+                        <RadioButton Name="_0"  Click="OnNoteClick">A</RadioButton>
+                        <RadioButton Name="_N1"  Click="OnNoteClick" Content="Rest"></RadioButton>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Column="1" Grid.Row="1"  Orientation="Horizontal">
-            <Button x:Name="playBtn" Content="Play" Width="100" Height="50" Margin="50,0,50,0"/>
-            <Button Content="Save" Width="100" Height="50" Margin="50,0,50,0"/>
-            <Button Content="Load" Width="100" Height="50" Margin="50,0,50,0"/>
+            <Button x:Name="playBtn" Content="Play" Width="100" Height="50" Margin="25,0,25,0" Click="PlaySong"/>
+            <Button Name="saveBtn" Content="Save" Width="100" Height="50" Margin="25,0,25,0" Click="SaveBtnClick"/>
+            <Button Content="JukeBox" Width="100" Height="50" Margin="25,0,25,0" Click="LoadSong"/>
+            <Button Content="Add Notes" Width="100" Height="50" Margin="25,0,50,0" Click="AddNotes"/>
         </StackPanel>
-        
     </Grid>
 </Window>

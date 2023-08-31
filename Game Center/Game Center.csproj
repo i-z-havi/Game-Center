@@ -6,6 +6,7 @@
     <RootNamespace>Game_Center</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <StartupObject>Game_Center.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
