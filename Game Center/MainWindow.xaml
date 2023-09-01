@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game_Center"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1400">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
             <!--2* means twice as big as other columns-->
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
         <Label x:Name="TitleLabel"
                Content="Game Center" 
@@ -25,23 +26,24 @@
                Grid.ColumnSpan="3" 
                Background="AliceBlue" 
                HorizontalContentAlignment="Center"
+               FontWeight="Bold"
                VerticalContentAlignment="Center" FontSize="36"/>
         <Label 
                 x:Name="DateLabel"
                 Content="Date" 
                 Grid.Row="0" 
                 Grid.Column="2" 
-                Grid.ColumnSpan="3" 
+                Grid.ColumnSpan="2" 
                 Background="AliceBlue"
-                HorizontalContentAlignment="Left"
-                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Right"  
+                VerticalContentAlignment="Stretch" 
                 FontFamily="Arial Black" 
                 FontSize="15"/>
         
         
         <Label 
             x:Name="GameText"
-            Content="please pick a game" 
+            Content="Please, Pick a Game!" 
             Grid.Row="1" 
             Grid.Column="1" 
             VerticalAlignment="Center" 
@@ -51,16 +53,22 @@
         
         <WrapPanel
             x:Name="GamesContainer"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
+            Width="450"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
             <Image x:Name="Image1" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage1Click" />
-            <Image x:Name="Image2" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage2MouseClick"/>
+            <Image x:Name="Image2" Source="/Images/CheckMark.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage2MouseClick"/>
             <Image x:Name="Image3" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage3Click"/>
             <Image x:Name="Image4" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage4Click"/>
             <Image x:Name="Image5" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage5Click"/>
             <Image x:Name="Image6" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage6Click"/>
         </WrapPanel>
+
+        <Label Name="Footer"
+               Background="AliceBlue"
+               Grid.Row="3"
+               Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

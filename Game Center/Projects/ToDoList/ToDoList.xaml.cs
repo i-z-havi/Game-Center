@@ -1,8 +1,10 @@
 ﻿using Game_Center.Projects.ToDoList.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +23,7 @@ namespace Game_Center.Projects.ToDoList
     /// </summary>
     public partial class ToDoList : Window
     {
+        private string tasksFromFile = " ";
         private ToDoListModel _todolist;
         public ToDoList()
         {
@@ -31,10 +34,22 @@ namespace Game_Center.Projects.ToDoList
         private void InitializeTasks()
         {
             _todolist=new ToDoListModel();
-            _todolist.AddTask(new ToDoTask(1, "Homework"));
-            _todolist.AddTask(new ToDoTask(2, "Dishes"));
+            //checks if file exists, if not creates it
+            if (File.Exists("tasks.txt"))
+            {
+                FileInfo fileInfo = new FileInfo("tasks.txt");
+                //checks if file is empty, if not it takes the tasks
+                if (fileInfo.Length!=0)
+                {
+                    tasksFromFile = File.ReadAllText("tasks.txt");
+                    _todolist = JsonSerializer.Deserialize<ToDoListModel>(tasksFromFile);
+                }
+            }
+            else
+            {
+                File.Create("tasks.txt");
+            }
             listTasks.ItemsSource = _todolist.Tasks;
-
         }
 
         private void OnTaskToggled(object sender, RoutedEventArgs e)
@@ -42,6 +57,8 @@ namespace Game_Center.Projects.ToDoList
             if(sender is CheckBox checkBox && checkBox.DataContext is ToDoTask task)
             {
                 _todolist.ToggleComplete(task.Id);
+                tasksFromFile = JsonSerializer.Serialize<ToDoListModel>(_todolist);
+                File.WriteAllText("tasks.txt", tasksFromFile);
             }
         }
 
@@ -73,6 +90,8 @@ namespace Game_Center.Projects.ToDoList
             if(textBlock.DataContext is ToDoTask task)
             {
                 _todolist.UpdateTask(task.Id, textBlock.Text);
+                tasksFromFile = JsonSerializer.Serialize<ToDoListModel>(_todolist);
+                File.WriteAllText("tasks.txt", tasksFromFile);
             }
         }
 
@@ -81,6 +100,8 @@ namespace Game_Center.Projects.ToDoList
             if (!string.IsNullOrEmpty(txtNewTask.Text))
             {
                 _todolist.AddTask(new ToDoTask(_todolist.Tasks.Count, txtNewTask.Text));
+                tasksFromFile = JsonSerializer.Serialize<ToDoListModel>(_todolist);
+                File.WriteAllText("tasks.txt", tasksFromFile);
                 txtNewTask.Clear();
             }
         }

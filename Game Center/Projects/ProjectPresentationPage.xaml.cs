@@ -38,7 +38,7 @@ namespace Game_Center.Projects
             Hide();
             currentProject.ShowDialog();
             currentProject.Close();
-            Show();
+            Close();
         }
     }
 }

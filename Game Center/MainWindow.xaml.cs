@@ -43,7 +43,7 @@ namespace Game_Center
 
         private void ShowCurrentDate(object sender, EventArgs e)
         {
-            DateLabel.Content = DateTime.UtcNow.ToString("dddd,dd, MMMM yyyy HH:mm:ss");
+            DateLabel.Content = DateTime.UtcNow.ToString("dddd dd, MMMM yyyy, HH:mm:ss");
         }
 
         private void OnMouseEnter(object sender, MouseEventArgs e)
@@ -94,8 +94,10 @@ namespace Game_Center
         private void OnImage3Click(object sender, MouseButtonEventArgs e)
         {
             CurrencyConverterView currencyConverter = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Currency Converter", "A tool that show the value of a currency after conversion.", Image3.Source, currencyConverter);
             Hide();
-            currencyConverter.ShowDialog();
+            presentationPage.ShowDialog();
             Show();
         }
 

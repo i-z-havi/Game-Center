@@ -58,6 +58,7 @@ namespace Game_Center.Projects.MusicProject
             _song.AddNote();
             SongGUI.ItemsSource = _song.songNotes;
             _di = new DirectoryInfo("songsfolder");
+            _di.Create();
             foreach (var item in _di.GetFiles())
             {
                 _songList.Add(item.Name);

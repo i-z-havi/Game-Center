@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Game_Center.Projects.ToDoList.Models
@@ -13,13 +14,23 @@ namespace Game_Center.Projects.ToDoList.Models
         public DateTime CreatedDate { get; set; }
         public bool IsComplete { get; set; }
 
-        public ToDoTask(int id, string descript, bool isComp=false) 
+        [JsonConstructor]
+        public ToDoTask(int Id, string Description, DateTime CreatedDate, bool IsComplete) 
+        {
+            this.Id = Id;
+            this.Description = Description;
+            this.CreatedDate = CreatedDate;
+            this.IsComplete = IsComplete; // allows more flexibility in creating tasks
+        
+        }
+
+        public ToDoTask(int id, string descript, bool isComp = false)
         {
             Id = id;
             Description = descript;
             CreatedDate = DateTime.Now;
             IsComplete = isComp; // allows more flexibility in creating tasks
-        
+
         }
     }
 }

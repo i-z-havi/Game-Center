@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Game_Center.Projects.ToDoList.Models
@@ -37,12 +39,8 @@ namespace Game_Center.Projects.ToDoList.Models
         public void ToggleComplete(int taskId)
         {
             ToDoTask task = Tasks.FirstOrDefault(x => x.Id.Equals(taskId));
-            if (task!=null) 
-            {
-                task.IsComplete = !task.IsComplete;
-            }
-            else
-            {
+            if (task==null) 
+            {   
                 throw new Exception("task with this id was not found");
             }
             
