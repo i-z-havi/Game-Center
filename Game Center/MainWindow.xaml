@@ -60,10 +60,10 @@
             VerticalAlignment="Center">
             <Image x:Name="Image1" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage1Click" />
             <Image x:Name="Image2" Source="/Images/CheckMark.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage2MouseClick"/>
-            <Image x:Name="Image3" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage3Click"/>
-            <Image x:Name="Image4" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage4Click"/>
-            <Image x:Name="Image5" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage5Click"/>
-            <Image x:Name="Image6" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage6Click"/>
+            <Image x:Name="Image3" Source="/Images/Currency.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage3Click"/>
+            <Image x:Name="Image4" Source="/Images/Simon.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage4Click"/>
+            <Image x:Name="Image5" Source="/Images/TicTac.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage5Click"/>
+            <Image x:Name="Image6" Source="/Images/QuarterNote.png" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage6Click"/>
         </WrapPanel>
 
         <Label Name="Footer"

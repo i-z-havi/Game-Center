@@ -14,11 +14,14 @@
     <None Remove="Images\Bomb.png" />
     <None Remove="Images\Car.png" />
     <None Remove="Images\CheckMark.jpg" />
-    <None Remove="Images\PENNY BIRTHDAY.jpeg" />
+    <None Remove="Images\Currency.jpg" />
+    <None Remove="Images\QuarterNote.png" />
+    <None Remove="Images\Simon.jpg" />
     <None Remove="Images\SimonSaysBlue.jpg" />
     <None Remove="Images\SimonSaysGreen.jpg" />
     <None Remove="Images\SimonSaysRed.jpg" />
     <None Remove="Images\SimonSaysYellow.jpg" />
+    <None Remove="Images\TicTac.jpg" />
     <None Remove="Images\TrebleClef.png" />
   </ItemGroup>
 
@@ -26,15 +29,18 @@
     <Resource Include="Images\Bomb.png" />
     <Resource Include="Images\Car.png" />
     <Resource Include="Images\CheckMark.jpg" />
+    <Resource Include="Images\Currency.jpg" />
+    <Resource Include="Images\QuarterNote.png" />
+    <Resource Include="Images\Simon.jpg" />
     <Resource Include="Images\SimonSaysYellow.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\Beuton.jpeg" />
-    <Resource Include="Images\PENNY BIRTHDAY.jpeg" />
     <Resource Include="Images\SimonSaysBlue.jpg" />
     <Resource Include="Images\SimonSaysGreen.jpg" />
     <Resource Include="Images\SimonSaysRed.jpg" />
+    <Resource Include="Images\TicTac.jpg" />
     <Resource Include="Images\TrebleClef.png" />
   </ItemGroup>
 

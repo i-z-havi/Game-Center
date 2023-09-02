@@ -41,7 +41,7 @@
             FontSize="20"
         />
 
-        <TextBox
+        <TextBlock
             x:Name="ProjectText"
             Grid.Column="1"
             Grid.Row="1"

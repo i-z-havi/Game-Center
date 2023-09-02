@@ -84,7 +84,7 @@ namespace Game_Center
             //Show();
             ToDoList todoListProject = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("To Do List", "A simple to do list with the ability to edit and finish tasks", Image2.Source, todoListProject);
+            presentationPage.OnStart("To Do List", "A simple to do list with the ability to edit and finish tasks.", Image2.Source, todoListProject);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -104,24 +104,30 @@ namespace Game_Center
         private void OnImage4Click(object sender, MouseButtonEventArgs e)
         {
             Simon simon = new Simon();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Simon Says", "The hit game Simon Says, finally on computers! Beeping was removed after play testers went insane listening to beeps for hours on end.", Image4.Source, simon);
             Hide();
-            simon.ShowDialog();
+            presentationPage.ShowDialog();
             Show();
         }
 
         private void OnImage5Click(object sender, MouseButtonEventArgs e)
         {
             TicTacToe tictac = new TicTacToe();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Tic Tac Toe", "The classic childhood game, Tic Tac Toe! (For legal reasons we must clarify we are in no way affiliated with the Tic Tac brand, or toes.)", Image5.Source, tictac);
             Hide();
-            tictac.ShowDialog();
+            presentationPage.ShowDialog();
             Show();
         }
 
         private void OnImage6Click(object sender, MouseButtonEventArgs e)
         {
             MusicProject music = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!", Image6.Source, music);
             Hide();
-            music.ShowDialog();
+            presentationPage.ShowDialog();
             Show();
         }
     }
