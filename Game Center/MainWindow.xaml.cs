@@ -1,4 +1,5 @@
 ﻿using Game_Center.Projects;
+using Game_Center.Projects.BezierCurveProject;
 using Game_Center.Projects.CurrencyConverter;
 using Game_Center.Projects.MusicProject;
 using Game_Center.Projects.Project_1;
@@ -126,6 +127,16 @@ namespace Game_Center
             MusicProject music = new();
             ProjectPresentationPage presentationPage = new();
             presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!", Image6.Source, music);
+            Hide();
+            presentationPage.ShowDialog();
+            Show();
+        }
+
+        private void OnImage7Click(object sender, MouseButtonEventArgs e)
+        {
+            CurvePage curve = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Curve Game", "Test", Image7.Source, curve);
             Hide();
             presentationPage.ShowDialog();
             Show();
