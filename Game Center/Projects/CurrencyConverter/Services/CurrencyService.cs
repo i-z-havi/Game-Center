@@ -1,4 +1,5 @@
 ﻿using Game_Center.Projects.CurrencyConverter.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,20 +7,21 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Game_Center.Projects.CurrencyConverter.Services
 {
     class CurrencyService
     {
         private const string BaseApiEndPoint = "http://api.exchangeratesapi.io/v1/latest";
-        private const string ApiKey = "test test test 1 2 3 ";
         private HttpClient Http_Client= new HttpClient();
 
         //Tasks are asynchronous functions that return a value, 
         //the syntax is async Task<var type>
         public async Task<Dictionary<string,double>> GetExchangeRateAsync()
         {
-            string requestUrl= $"{BaseApiEndPoint}?access_key={ApiKey}";
+            var config = new ConfigurationBuilder().AddUserSecrets<CurrencyService>().Build();
+            string requestUrl = $"{BaseApiEndPoint}?access_key={config["apiKey"]}"; // <- Replace with your own exchangeratesapi key!
             string response = await Http_Client.GetStringAsync(requestUrl); //Http_Client =object we made on line 14
             JsonSerializerOptions options = new JsonSerializerOptions
             {

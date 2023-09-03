@@ -23,14 +23,16 @@ namespace Game_Center.Projects.BezierCurveProject
     public partial class CurvePage : Window
     {
         private bool _vectorStarted = false;
+        private SolidColorBrush _colorBrush = new SolidColorBrush(Colors.White);
         private Line _line = new Line();
         private Point _referencePoint = new Point();
         private Point _clickedPoint = new Point();
         private Vector _vector = new Vector();
         public CurvePage()
         {
+
             InitializeComponent();
-            _line.Stroke = Brushes.White;
+            _line.Stroke = _colorBrush;
             WindowCanvas.Children.Add(_line );            
         }
 
@@ -49,9 +51,9 @@ namespace Game_Center.Projects.BezierCurveProject
             {
                 _vector.X=_clickedPoint.X-e.GetPosition(this).X;
                 _vector.Y=_clickedPoint.Y-e.GetPosition(this).Y;
-                _vector *= 5;
+                _vector *= 8;
                 Path path = new Path();
-                path.Stroke = Brushes.White;
+                path.Stroke= _colorBrush;
                 path.StrokeThickness = 3;
 
                 PathGeometry pGeometry = new();
@@ -63,8 +65,6 @@ namespace Game_Center.Projects.BezierCurveProject
                 controlPoint = Point.Add(_clickedPoint,_vector);
 
                 Point endPoint = new Point(controlPoint.X+_vector.X, _clickedPoint.Y);
-                debuginfo1.Text = $"{endPoint.X}, {endPoint.Y}";
-                debuginfo2.Text = $"{controlPoint.X}, {controlPoint.Y}";
                 QuadraticBezierSegment qBezierSwgment = new QuadraticBezierSegment(controlPoint, endPoint, true);
                 pFigure.Segments.Add(qBezierSwgment);
                 pGeometry.Figures.Add(pFigure);
@@ -84,6 +84,27 @@ namespace Game_Center.Projects.BezierCurveProject
                 _line.Y1 = _clickedPoint.Y;
                 _line.X2 = _referencePoint.X;
                 _line.Y2 = _referencePoint.Y;
+            }
+        }
+
+        private void ChangeColor(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle colorRect = sender as Rectangle;
+            if(colorRect != null )
+            {
+                _colorBrush = colorRect.Stroke as SolidColorBrush;
+            }
+        }
+
+        private void EraseLines(object sender, RoutedEventArgs e)
+        {
+            Type t = typeof(Path);
+            for (int i = WindowCanvas.Children.Count - 1; i >= 0; i--)
+            {
+                if (WindowCanvas.Children[i].GetType() == t)
+                {
+                    WindowCanvas.Children.RemoveAt(i);
+                }          
             }
         }
     }

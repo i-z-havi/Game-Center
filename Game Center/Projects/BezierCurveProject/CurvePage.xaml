@@ -8,26 +8,16 @@
         Title="CurvePage" Height="450" Width="800">
     <Grid >
         <Canvas  Background='Black' MouseMove="DrawVector" MouseLeftButtonUp="VectorEnded" x:Name="WindowCanvas"  Height="Auto" Width="Auto" >
-            <Path Stroke="White" StrokeThickness="3">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathGeometry.Figures>
-                            <PathFigureCollection x:Name="CurvesVisible">
-                                <PathFigure x:Name="Start" StartPoint="50,400">
-                                    <PathFigure.Segments>
-                                        <PathSegmentCollection>
-                                            <QuadraticBezierSegment x:Name="ControlandEnd" Point1="200,200" Point2="350,400" />
-                                        </PathSegmentCollection>
-                                    </PathFigure.Segments>
-                                </PathFigure>
-                            </PathFigureCollection>
-                        </PathGeometry.Figures>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
-            <Image Source="/Images/Simon.jpg" Name="StartCube" MouseLeftButtonDown="StartCubeClicked" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" Panel.ZIndex="1" Canvas.Left="45" Canvas.Top="376" />
+            <StackPanel Margin="10">
+                <TextBlock Text="Colors:" Background="White"/>
+                <Rectangle Stroke="Red" Fill="Red" Height="30" Margin="0,10,0,0" MouseLeftButtonUp="ChangeColor"/>
+                <Rectangle Stroke="Blue" Fill="Blue" Height="30" Margin="0,10,0,0" MouseLeftButtonUp="ChangeColor"/>
+                <Rectangle Stroke="Green" Fill="Green" Height="30" Margin="0,10,0,0" MouseLeftButtonUp="ChangeColor"/>
+                <Rectangle Stroke="Yellow" Fill="Yellow" Height="30" Margin="0,10,0,0" MouseLeftButtonUp="ChangeColor"/>
+                <Rectangle Stroke="White" Fill="White" Height="30" Margin="0,10,0,0" MouseLeftButtonUp="ChangeColor"/>
+                <Button Content="Erase All" Margin="0,10,0,0" Click="EraseLines"/>
+            </StackPanel>
+            <Ellipse Stroke="Blue" Fill="White" Name="StartCube" MouseLeftButtonDown="StartCubeClicked" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" Panel.ZIndex="1" Canvas.Left="45" Canvas.Top="376" />
         </Canvas>
-        <TextBlock Name="debuginfo1" HorizontalAlignment="Left" Margin="231,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="White" Height="20" Width="197"/>
-        <TextBlock Name="debuginfo2" HorizontalAlignment="Left" Margin="231,149,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Background="White" Height="26" Width="197"/>
     </Grid>
 </Window>

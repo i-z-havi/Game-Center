@@ -59,6 +59,7 @@ namespace Game_Center
                 "Image4" => "Simon Says",
                 "Image5" => "Tic Tac Toe",
                 "Image6" => "Song Game",
+                "Image7" => "Curve Game",
                 _ => "please pick a game"
             };
         }
@@ -136,7 +137,7 @@ namespace Game_Center
         {
             CurvePage curve = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Curve Game", "Test", Image7.Source, curve);
+            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This exists to make very basic bezier curves based on user input.", Image7.Source, curve);
             Hide();
             presentationPage.ShowDialog();
             Show();

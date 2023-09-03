@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Game_Center"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1400">
+   
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -19,15 +20,27 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Ellipse Width="50" Height="50" Grid.Column="0" HorizontalAlignment="Right">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/Images/profile.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock Grid.Column="1" FontWeight="Bold" Text="Itay Zehavi" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </Grid>
+
         <Label x:Name="TitleLabel"
                Content="Game Center" 
                Grid.Row="0" 
-               Grid.Column="0" 
-               Grid.ColumnSpan="3" 
+               Grid.Column="1" 
                Background="AliceBlue" 
                HorizontalContentAlignment="Center"
                FontWeight="Bold"
-               VerticalContentAlignment="Center" FontSize="36"/>
+               VerticalContentAlignment="Center" FontSize="42"/>
         <Label 
                 x:Name="DateLabel"
                 Content="Date" 
@@ -39,8 +52,8 @@
                 VerticalContentAlignment="Stretch" 
                 FontFamily="Arial Black" 
                 FontSize="15"/>
-        
-        
+
+
         <Label 
             x:Name="GameText"
             Content="Please, Pick a Game!" 
@@ -50,7 +63,7 @@
             HorizontalAlignment="Center"
             FontSize="26"
         />
-        
+
         <WrapPanel
             x:Name="GamesContainer"
             Grid.Row="2"
@@ -64,7 +77,7 @@
             <Image x:Name="Image4" Source="/Images/Simon.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage4Click"/>
             <Image x:Name="Image5" Source="/Images/TicTac.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage5Click"/>
             <Image x:Name="Image6" Source="/Images/QuarterNote.png" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage6Click"/>
-            <Image x:Name="Image7" Source="/Images/Beuton.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage7Click"/>
+            <Image x:Name="Image7" Source="/Images/CurveImage.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage7Click"/>
         </WrapPanel>
 
         <Label Name="Footer"

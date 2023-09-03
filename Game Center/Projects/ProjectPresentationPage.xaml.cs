@@ -40,5 +40,10 @@ namespace Game_Center.Projects
             currentProject.Close();
             Close();
         }
+
+        private void ReturnToMain(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
     }
 }

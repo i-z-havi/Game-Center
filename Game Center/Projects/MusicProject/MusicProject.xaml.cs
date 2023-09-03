@@ -25,7 +25,6 @@ namespace Game_Center.Projects.MusicProject
     public partial class MusicProject : Window
     {
         private Song _song;
-        private double _length=200;
         private ObservableCollection<string> _songList = new ObservableCollection<string>();
         private DirectoryInfo _di;
 
