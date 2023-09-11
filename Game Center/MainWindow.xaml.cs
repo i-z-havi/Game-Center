@@ -2,10 +2,10 @@
 using Game_Center.Projects.BezierCurveProject;
 using Game_Center.Projects.CurrencyConverter;
 using Game_Center.Projects.MusicProject;
-using Game_Center.Projects.Project_1;
 using Game_Center.Projects.SimonSays;
 using Game_Center.Projects.Tic_Tac_Toe;
 using Game_Center.Projects.ToDoList;
+using Game_Center.Projects.UserManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,10 +71,11 @@ namespace Game_Center
 
         private void OnImage1Click(object sender, MouseButtonEventArgs e)
         {
-            Window1 window1 = new();
-
+            UserManagement management = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("User Management", "This is the page you open to manage users. Surprising, I know.", Image2.Source, management);
             Hide();
-            window1.ShowDialog();
+            presentationPage.ShowDialog();
             Show();
         }
 
@@ -82,7 +83,7 @@ namespace Game_Center
         {
             //ToDoList todoListProject = new();
             //Hide();
-            //todoListProject.ShowDialog();
+            //todoListProject.Show();
             //Show();
             ToDoList todoListProject = new();
             ProjectPresentationPage presentationPage = new();
@@ -93,6 +94,7 @@ namespace Game_Center
 
         }
 
+        //TODO: make this function async, make a load currency function in Currency Converter that runs here 
         private void OnImage3Click(object sender, MouseButtonEventArgs e)
         {
             CurrencyConverterView currencyConverter = new();

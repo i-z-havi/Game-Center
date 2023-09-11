@@ -17,9 +17,8 @@ namespace Game_Center.Projects.BezierCurveProject
     /// <summary>
     /// Interaction logic for CurvePage.xaml
     /// </summary>
-    // TODO: -make actual image for clicking, current is placeholder
+    // TODO: 
     //  -maybe build around having window open all the way?
-    // -allow line color to be selected
     public partial class CurvePage : Window
     {
         private bool _vectorStarted = false;

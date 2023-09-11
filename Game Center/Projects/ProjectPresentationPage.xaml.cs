@@ -19,7 +19,7 @@ namespace Game_Center.Projects
     /// </summary>
     public partial class ProjectPresentationPage : Window
     {
-        private Window currentProject;
+        private Window? currentProject;
         public ProjectPresentationPage()
         {
             InitializeComponent();
@@ -36,14 +36,19 @@ namespace Game_Center.Projects
         private void OnImageClick(object sender, MouseButtonEventArgs e)
         {
             Hide();
-            currentProject.ShowDialog();
-            currentProject.Close();
+            currentProject!.ShowDialog();
             Close();
         }
 
         private void ReturnToMain(object sender, MouseButtonEventArgs e)
         {
+            currentProject.Close();
             Close();
+        }
+
+        private void CloseChildProject(object sender, EventArgs e)
+        {
+            currentProject.Close();
         }
     }
 }
