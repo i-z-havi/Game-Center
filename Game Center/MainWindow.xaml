@@ -78,6 +78,7 @@
             <Image x:Name="Image5" Source="/Images/TicTac.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage5Click"/>
             <Image x:Name="Image6" Source="/Images/QuarterNote.png" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage6Click"/>
             <Image x:Name="Image7" Source="/Images/CurveImage.jpeg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage7Click"/>
+            <Image x:Name="Image8" Source="/Images/Frog.jpg" Width="100" Height="100" Margin="20" MouseEnter="OnMouseEnter" MouseLeave="OnMouseExit" MouseLeftButtonUp="OnImage8Click"/>
         </WrapPanel>
 
         <Label Name="Footer"

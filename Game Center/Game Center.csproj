@@ -17,6 +17,11 @@
     <None Remove="Images\CheckMark.jpg" />
     <None Remove="Images\Currency.jpg" />
     <None Remove="Images\CurveImage.jpeg" />
+    <None Remove="Images\Frog.jpg" />
+    <None Remove="Images\Frog.png" />
+    <None Remove="Images\FrogJump.png" />
+    <None Remove="Images\lilypad.png" />
+    <None Remove="Images\Pond.jpg" />
     <None Remove="Images\profile.jpg" />
     <None Remove="Images\QuarterNote.png" />
     <None Remove="Images\Simon.jpg" />
@@ -24,6 +29,7 @@
     <None Remove="Images\SimonSaysGreen.jpg" />
     <None Remove="Images\SimonSaysRed.jpg" />
     <None Remove="Images\SimonSaysYellow.jpg" />
+    <None Remove="Images\Spikes.png" />
     <None Remove="Images\TicTac.jpg" />
     <None Remove="Images\TrebleClef.png" />
   </ItemGroup>
@@ -34,6 +40,11 @@
     <Resource Include="Images\CheckMark.jpg" />
     <Resource Include="Images\Currency.jpg" />
     <Resource Include="Images\CurveImage.jpeg" />
+    <Resource Include="Images\Frog.jpg" />
+    <Resource Include="Images\Frog.png" />
+    <Resource Include="Images\FrogJump.png" />
+    <Resource Include="Images\lilypad.png" />
+    <Resource Include="Images\Pond.jpg" />
     <Resource Include="Images\profile.jpg" />
     <Resource Include="Images\QuarterNote.png" />
     <Resource Include="Images\Simon.jpg" />
@@ -45,6 +56,7 @@
     <Resource Include="Images\SimonSaysBlue.jpg" />
     <Resource Include="Images\SimonSaysGreen.jpg" />
     <Resource Include="Images\SimonSaysRed.jpg" />
+    <Resource Include="Images\Spikes.png" />
     <Resource Include="Images\TicTac.jpg" />
     <Resource Include="Images\TrebleClef.png" />
   </ItemGroup>

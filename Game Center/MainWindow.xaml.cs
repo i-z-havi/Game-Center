@@ -1,6 +1,7 @@
 ﻿using Game_Center.Projects;
 using Game_Center.Projects.BezierCurveProject;
 using Game_Center.Projects.CurrencyConverter;
+using Game_Center.Projects.LeapFrogProject;
 using Game_Center.Projects.MusicProject;
 using Game_Center.Projects.SimonSays;
 using Game_Center.Projects.Tic_Tac_Toe;
@@ -139,7 +140,17 @@ namespace Game_Center
         {
             CurvePage curve = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This exists to make very basic bezier curves based on user input.", Image7.Source, curve);
+            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This is what Leap Frog started off as, and I don't have the heart to delete it. Consider this an alpha for Leap Frog!", Image7.Source, curve);
+            Hide();
+            presentationPage.ShowDialog();
+            Show();
+        }
+
+        private void OnImage8Click(object sender, MouseButtonEventArgs e)
+        {
+            LeapFrog frog = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points.", Image8.Source, frog);
             Hide();
             presentationPage.ShowDialog();
             Show();
