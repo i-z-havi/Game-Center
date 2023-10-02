@@ -26,6 +26,19 @@ namespace Game_Center.Projects.UserManagement.Utils
             return true;
         }
 
+        public static bool Email(TextBox box) 
+        {
+            Regex regex = new("^\\S+@\\S+\\.\\S+$");
+            Match match = regex.Match(box.Text);
+            if (!match.Success) 
+            {
+                MessageBox.Show("please enter a valid email");
+                box.BorderBrush = new SolidColorBrush(Colors.Red);
+                return false;
+            }
+            box.BorderBrush = new SolidColorBrush(Colors.Black);
+            return true;
+        }
          
     }
 }

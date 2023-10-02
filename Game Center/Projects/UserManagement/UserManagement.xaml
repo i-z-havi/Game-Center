@@ -12,12 +12,12 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="MainContainer" Grid.Row="0">
-            
+
             <Label x:Name="Label_Title" 
                    Content="User Management"
                    Background="AliceBlue"
                    FontWeight="Bold"
-                   FontSize="25"
+                   FontSize="23"
                    HorizontalContentAlignment="Center"/>
             <StackPanel Width="300">
                 <Label Content="User Name" />
@@ -32,8 +32,22 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
+                <StackPanel x:Name="Pass_Panel">
+                    <Label Content="Password" />
+                    <TextBox x:Name="Input_Pass" 
+                         BorderThickness="1,1,1,3"
+                         Height="25"
+                         >
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="BorderBrush" Value="Blue"/>
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Width="300">
+            <StackPanel Width="300" Name="Mail_Panel" Visibility="Collapsed">
                 <Label Content="Email" />
                 <TextBox x:Name="Input_Email" 
                          BorderThickness="1,1,1,3"
@@ -47,62 +61,51 @@
                     </TextBox.Resources>
                 </TextBox>
             </StackPanel>
-            <StackPanel Width="300" Name="PassPanel" Visibility="Collapsed">
-                <Label Content="Password" />
-                <TextBox x:Name="Input_Password" 
-                         BorderThickness="1,1,1,3"
-                         Height="25"
-                         >
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="BorderBrush" Value="Blue"/>
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-            </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button 
+                    x:Name="LogInBtn" 
+                    Content="Log In"
+                    Width="100"
+                    Height="30"
+                    Background="Azure" Click="LogIn">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="Margin" Value="5,0,5,0"/>
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <StackPanel Orientation="Horizontal" Visibility="Collapsed" Name="PostLogPanel">
+                    <Button 
                     x:Name="AddBtn" 
                     Content="Add"
                     Width="100"
                     Height="30"
                     Background="Azure" Click="AddClick">
-                    <Button.Resources>
-                    <Style TargetType="Border">
-                            <Setter Property="Margin" Value="5,0,5,0"/>
-                            <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                    </Button.Resources>
-                </Button>
-                <Button 
-                    x:Name="RegisterBtn" 
-                    Content="Register"
-                    Width="100"
-                    Height="30"
-                    Background="Azure" Click="RegisterClick">
-                    <Button.Resources>
-                    <Style TargetType="Border">
-                            <Setter Property="Margin" Value="5,0,5,0"/>
-                            <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                    </Button.Resources>
-                </Button>
-                <Button 
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="Margin" Value="5,0,5,0"/>
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button 
                     x:Name="DeleteBtn" 
                     Content="Delete"
                     Width="100"
                     Height="30"
                     Background="Azure" Click="DeleteUser">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="Margin" Value="5,0,5,0"/>
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="Margin" Value="5,0,5,0"/>
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
             </StackPanel>
-            <DataGrid x:Name="DataGrid1" SelectedCellsChanged="RowSelected" Loaded="RemovePasswords"/>
+            <DataGrid x:Name="DataGrid1" SelectedCellsChanged="RowSelected" Visibility="Collapsed"/>
 
 
         </StackPanel>

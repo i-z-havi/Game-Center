@@ -2,6 +2,7 @@
 using Game_Center.Projects.UserManagement.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,40 +23,46 @@ namespace Game_Center.Projects.UserManagement
     public partial class UserManagement : Window
     {
         private User _selectedUser;
+        ObservableCollection<User> users = DataHandler.GetUserList();
 
-            List<User> users = new List<User>
-            {
-                new User("Bpb", "Bob@email.com", "Abc123!"),
-                new User("John", "John@email.com", "Abc123!"),
-                new User("Doe", "Doe@email.com", "Abc123!"),
-                new User("Sil", "Sil@email.com", "Abc123!"),
-            };
         public UserManagement()
         {
             InitializeComponent();
-            UpdateDataGrid();
- 
+            if (users == null||users.Count==0)
+            {
+                ObservableCollection<User> initialList = new()
+                {
+                    new User("Bob", "bob@email.com", "Qaz123!123Qaz"),
+                    new User("Sara", "Sara@email.com", "Qaz123!123Qaz"),
+                    new User("Neomi", "Neomi@email.com", "Qaz123!123Qaz"),
+                    new User("Abed", "Abed@email.com", "Qaz123!123Qaz")
+                };      
+                users = DataHandler.UpdateList(initialList);
+            }
+            DataGrid1.ItemsSource = users;
+        }
+
+        private void UpdateJsonData()
+        {
+            ObservableCollection<User> tempList = users;
+            users = DataHandler.UpdateList(tempList);
         }
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            if (Validate.UserName(Input_User))
+            if (Validate.UserName(Input_User)&&Validate.Email(Input_Email))
             {
                 users.Add(new User(Input_User.Text, Input_Email.Text, "Abc123!"));
-                UpdateDataGrid();
+                UpdateJsonData();
             }
-        }
-
-        private void UpdateDataGrid()
-        {
-            DataGrid1.ItemsSource = users.ToList();
         }
 
         private void RowSelected(object sender, SelectedCellsChangedEventArgs e)
         {
-            if (DataGrid1.SelectedCells.Count!=0)
+            if (DataGrid1.SelectedCells.Count != 0)
             {
                 _selectedUser = DataGrid1.SelectedCells[0].Item as User;
+                Input_User.Text = _selectedUser.Name;
                 Input_Email.Text = _selectedUser.Email;
             }
         }
@@ -63,17 +70,24 @@ namespace Game_Center.Projects.UserManagement
         private void DeleteUser(object sender, RoutedEventArgs e)
         {
             users.Remove(_selectedUser);
-            UpdateDataGrid();
+            UpdateJsonData();
+            DataGrid1.SelectedItem = null;
         }
 
-        private void RemovePasswords(object sender, RoutedEventArgs e)
+        private void LogIn(object sender, RoutedEventArgs e)
         {
-            DataGrid1.Columns[3].Visibility = Visibility.Hidden;
-        }
-
-        private void RegisterClick(object sender, RoutedEventArgs e)
-        {
-            PassPanel.Visibility = Visibility.Visible;
+            if (Input_User.Text=="admin"&&Input_Pass.Text=="abc123")
+            {
+                Mail_Panel.Visibility = Visibility.Visible;
+                PostLogPanel.Visibility = Visibility.Visible;
+                DataGrid1.Visibility = Visibility.Visible;
+                Pass_Panel.Visibility= Visibility.Collapsed;
+                LogInBtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MessageBox.Show("account is not an admin!","Error",MessageBoxButton.OK);
+            }
         }
     }
 }

@@ -54,13 +54,14 @@ namespace Game_Center
             image.Opacity= 0.6;
             GameText.Content = (image.Name) switch
             {
-                "Image1" => "a User Management System",
+                "Image1" => "User Management System",
                 "Image2" => "To Do List",
                 "Image3" => "Currency Exchange Rate",
-                "Image4" => "Simon Says",
-                "Image5" => "Tic Tac Toe",
+                "Image4" => "Tic Tac Toe",
+                "Image5" => "Simon Says",
                 "Image6" => "Song Game",
                 "Image7" => "Curve Game",
+                "Image8" => "Leap Frog",
                 _ => "please pick a game"
             };
         }
@@ -74,7 +75,7 @@ namespace Game_Center
         {
             UserManagement management = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("User Management", "This is the page you open to manage users. Surprising, I know.", Image2.Source, management);
+            presentationPage.OnStart("User Management", "This is the page you open to manage users. Surprising, I know.", Image1.Source, management);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -150,7 +151,7 @@ namespace Game_Center
         {
             LeapFrog frog = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points.", Image8.Source, frog);
+            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points. All art was done by me.", Image8.Source, frog);
             Hide();
             presentationPage.ShowDialog();
             Show();

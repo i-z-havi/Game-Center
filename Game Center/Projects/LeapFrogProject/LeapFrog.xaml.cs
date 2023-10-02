@@ -138,37 +138,36 @@ namespace Game_Center.Projects.LeapFrogProject
 
         private void FrogCubeClicked(object sender, MouseButtonEventArgs e)
         {
-            _vectorStarted = true;
-            _clickedPoint = e.GetPosition(this);
+            if (!_isAnimated)
+            {
+                _vectorStarted = true;
+                _clickedPoint = e.GetPosition(this);
+            }
         }
 
         private void VectorEnded(object sender, MouseButtonEventArgs e)
         {
-            if (_vectorStarted)
+            if (_vectorStarted && e.GetPosition(this).Y > _clickedPoint.Y && !_isAnimated)
             {
-                FrogCube.Source = new BitmapImage(new Uri("/Images/FrogJump.png",UriKind.Relative));
+                FrogCube.Source = new BitmapImage(new Uri("/Images/FrogJump.png", UriKind.Relative));
                 tries++;
                 Tries.Text = $"Tries: {tries}";
                 _vectorStarted = false;
                 _line.Stroke = null;
-                if (e.GetPosition(this).Y > _clickedPoint.Y && !_isAnimated)
+                //since the initialization is y=0, afterwards endpoint y!=0
+                //the second time it IS, so we change it AFTER the animation plays, so that the animation and actual X change dont conflict
+                if (_endPoint.Y != 0)
                 {
-                    //since the initialization is y=0, afterwards endpoint y!=0
-                    //the second time it IS, so we change it AFTER the animation plays, so that the animation and actual X change dont conflict
-                    if (_endPoint.Y != 0)
-                    {
-                        Canvas.SetLeft(FrogCube, _endPoint.X-17.5);
-                    }
-                    _vector.X = _clickedPoint.X - e.GetPosition(this).X;
-                    _vector.Y = _clickedPoint.Y - e.GetPosition(this).Y;
-                    _clickedPoint = new Point(Canvas.GetLeft(FrogCube) + 17, Canvas.GetTop(FrogCube) + 17);
-                    _vector *= 5;
-                    Point controlPoint = Point.Add(_clickedPoint, _vector);
-                    _endPoint = new Point(controlPoint.X + _vector.X, _clickedPoint.Y);
-                    DoubleAnimationUsingPathExample();
+                    Canvas.SetLeft(FrogCube, _endPoint.X - 17.5);
                 }
+                _vector.X = _clickedPoint.X - e.GetPosition(this).X;
+                _vector.Y = _clickedPoint.Y - e.GetPosition(this).Y;
+                _clickedPoint = new Point(Canvas.GetLeft(FrogCube) + 17, Canvas.GetTop(FrogCube) + 17);
+                _vector *= 5;
+                Point controlPoint = Point.Add(_clickedPoint, _vector);
+                _endPoint = new Point(controlPoint.X + _vector.X, _clickedPoint.Y);
+                DoubleAnimationUsingPathExample();
             }
-           
         }
 
         private void DrawVector(object sender, MouseEventArgs e)
