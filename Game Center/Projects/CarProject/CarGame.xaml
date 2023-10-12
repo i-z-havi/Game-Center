@@ -1,0 +1,28 @@
+﻿<Window x:Class="Game_Center.Projects.CarProject.CarGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_Center.Projects.CarProject"
+        mc:Ignorable="d"
+        Title="CarGame" Height="450" Width="800">
+    <Grid>
+        <Canvas Name="uiCanvas" Visibility="Visible">
+            <Image Source="/Images/carMenu.png" Height="450" Width="800"  Stretch="UniformToFill"/>
+            <TextBlock Text="Car Game" FontSize="32" FontStyle="Italic" Canvas.Left="330" Canvas.Top="50"/>
+            <Button Name="playBtn" Width="50" Height="30" Content="Play" Click="playBtnClick" Canvas.Top="307" Canvas.Left="375" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Text="Music is 'Cipher' by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 3.0, http://creativecommons.org/licenses/by/3.0/"
+            VerticalAlignment="Top"
+            Canvas.Bottom="0" 
+            TextWrapping="Wrap"
+            Background="AntiqueWhite"
+            HorizontalAlignment="Left" Canvas.Top="335" Width="240" Height="100" Canvas.Right="0"/>
+        </Canvas>
+        <Canvas x:Name="gameCanvas" Visibility="Collapsed">
+            <MediaElement x:Name="backgroundVideo" LoadedBehavior="Manual" UnloadedBehavior="Stop" MediaEnded="MediaElement_MediaEnded" MediaFailed="MediaElement_MediaFailed" Stretch="UniformToFill"/>
+            <MediaElement x:Name="backgroundMusic" LoadedBehavior="Manual" UnloadedBehavior="Stop" MediaEnded="MediaElement_MediaEnded" MediaFailed="MediaElement_MediaFailed"/>
+            <TextBlock x:Name="scoreText" Canvas.Right="25" Text="Score: " />
+            <Image x:Name="playerCarImage" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="60" Source="/Images/Car.png" ImageFailed="Image_ImageFailed"/>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,5 +1,6 @@
 ﻿using Game_Center.Projects;
 using Game_Center.Projects.BezierCurveProject;
+using Game_Center.Projects.CarProject;
 using Game_Center.Projects.CurrencyConverter;
 using Game_Center.Projects.LeapFrogProject;
 using Game_Center.Projects.MusicProject;
@@ -58,10 +59,11 @@ namespace Game_Center
                 "Image2" => "To Do List",
                 "Image3" => "Currency Exchange Rate",
                 "Image4" => "Tic Tac Toe",
-                "Image5" => "Simon Says",
-                "Image6" => "Song Game",
-                "Image7" => "Curve Game",
-                "Image8" => "Leap Frog",
+                "Image5" => "Car Game",
+                "Image6" => "Simon Says",
+                "Image7" => "Song Game",
+                "Image8" => "Curve Game",
+                "Image9" => "Leap Frog",
                 _ => "please pick a game"
             };
         }
@@ -83,10 +85,6 @@ namespace Game_Center
 
         private void OnImage2MouseClick(object sender, MouseButtonEventArgs e)
         {
-            //ToDoList todoListProject = new();
-            //Hide();
-            //todoListProject.Show();
-            //Show();
             ToDoList todoListProject = new();
             ProjectPresentationPage presentationPage = new();
             presentationPage.OnStart("To Do List", "A simple to do list with the ability to edit and finish tasks.", Image2.Source, todoListProject);
@@ -106,22 +104,21 @@ namespace Game_Center
             presentationPage.ShowDialog();
             Show();
         }
-
         private void OnImage4Click(object sender, MouseButtonEventArgs e)
         {
-            Simon simon = new Simon();
+            TicTacToe tictac = new TicTacToe();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Simon Says", "The hit game Simon Says, finally on computers! Beeping was removed after play testers went insane listening to beeps for hours on end.", Image4.Source, simon);
+            presentationPage.OnStart("Tic Tac Toe", "The classic childhood game, Tic Tac Toe! (For legal reasons we must clarify we are in no way affiliated with the Tic Tac brand, or toes.)", Image4.Source, tictac);
             Hide();
             presentationPage.ShowDialog();
             Show();
         }
-
+        
         private void OnImage5Click(object sender, MouseButtonEventArgs e)
         {
-            TicTacToe tictac = new TicTacToe();
+            CarGame car = new CarGame();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Tic Tac Toe", "The classic childhood game, Tic Tac Toe! (For legal reasons we must clarify we are in no way affiliated with the Tic Tac brand, or toes.)", Image5.Source, tictac);
+            presentationPage.OnStart("Car Game", "Drive around using the left and right arrow keys while avoiding the bombs!", Image5.Source, car);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -129,19 +126,20 @@ namespace Game_Center
 
         private void OnImage6Click(object sender, MouseButtonEventArgs e)
         {
-            MusicProject music = new();
+            Simon simon = new Simon();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!", Image6.Source, music);
+            presentationPage.OnStart("Simon Says", "The hit game Simon Says, finally on computers! Beeping was removed after play testers went insane listening to beeps for hours on end.", Image6.Source, simon);
             Hide();
             presentationPage.ShowDialog();
             Show();
         }
 
+
         private void OnImage7Click(object sender, MouseButtonEventArgs e)
         {
-            CurvePage curve = new();
+            MusicProject music = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This is what Leap Frog started off as, and I don't have the heart to delete it. Consider this an alpha for Leap Frog!", Image7.Source, curve);
+            presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!", Image7.Source, music);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -149,9 +147,19 @@ namespace Game_Center
 
         private void OnImage8Click(object sender, MouseButtonEventArgs e)
         {
+            CurvePage curve = new();
+            ProjectPresentationPage presentationPage = new();
+            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This is what Leap Frog started off as, and I don't have the heart to delete it. Consider this an alpha for Leap Frog!", Image8.Source, curve);
+            Hide();
+            presentationPage.ShowDialog();
+            Show();
+        }
+
+        private void OnImage9Click(object sender, MouseButtonEventArgs e)
+        {
             LeapFrog frog = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points. All art was done by me.", Image8.Source, frog);
+            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points. All art was done by me.", Image9.Source, frog);
             Hide();
             presentationPage.ShowDialog();
             Show();

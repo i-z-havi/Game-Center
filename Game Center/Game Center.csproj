@@ -14,6 +14,7 @@
     <None Remove="Images\Beuton.jpeg" />
     <None Remove="Images\Bomb.png" />
     <None Remove="Images\Car.png" />
+    <None Remove="Images\carMenu.png" />
     <None Remove="Images\CheckMark.jpg" />
     <None Remove="Images\Currency.jpg" />
     <None Remove="Images\CurveImage.jpeg" />
@@ -33,11 +34,23 @@
     <None Remove="Images\TicTac.jpg" />
     <None Remove="Images\TrebleClef.png" />
     <None Remove="Images\UserManagement.png" />
+    <None Remove="Media\CarVideo.mp4" />
+    <None Remove="Media\Cipher2.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Media\CarVideo.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Cipher2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\Bomb.png" />
     <Resource Include="Images\Car.png" />
+    <Resource Include="Images\carMenu.png" />
     <Resource Include="Images\CheckMark.jpg" />
     <Resource Include="Images\Currency.jpg" />
     <Resource Include="Images\CurveImage.jpeg" />
@@ -64,7 +77,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Projects\CarProject\" />
     <Folder Include="Projects\SimonSays\Models\" />
   </ItemGroup>
 
