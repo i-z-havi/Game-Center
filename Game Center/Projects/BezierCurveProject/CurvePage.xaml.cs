@@ -17,8 +17,6 @@ namespace Game_Center.Projects.BezierCurveProject
     /// <summary>
     /// Interaction logic for CurvePage.xaml
     /// </summary>
-    // TODO: 
-    //  -maybe build around having window open all the way?
     public partial class CurvePage : Window
     {
         private bool _vectorStarted = false;

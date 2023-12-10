@@ -58,7 +58,7 @@
             Grid.Row="2"
             Margin="25"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center" MouseLeftButtonUp="OnImageClick"
+            VerticalAlignment="Center" MouseLeftButtonUp="OnImageClick" MouseEnter="ProjectImage_MouseEnter" MouseLeave="ProjectImage_MouseLeave"
         />
         <Label Name="Footer"
                Background="AliceBlue"

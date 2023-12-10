@@ -14,6 +14,7 @@ namespace Game_Center.Projects.CarProject.Models
         public int Y { get; set; }
         public int Speed { get; set; }
         public Image Sprite { get; set; }
+
         public Rect Hitbox = new Rect(0,0,0,0);
 
         public GameObject(int x, int y, int speed, Image img) 

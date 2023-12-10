@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Center.Projects.UserManagement.Models
 {
-    public class User //will be used in all of the project, so its public
+    public class User 
     {
         public static int Count=0;
         public int Id { get; set; }

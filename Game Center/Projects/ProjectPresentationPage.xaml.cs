@@ -50,5 +50,15 @@ namespace Game_Center.Projects
         {
             currentProject.Close();
         }
+
+        private void ProjectImage_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ProjectImage.Opacity = 0.5;
+        }
+
+        private void ProjectImage_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ProjectImage.Opacity = 1;
+        }
     }
 }
