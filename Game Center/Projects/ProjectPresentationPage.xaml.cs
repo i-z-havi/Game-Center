@@ -25,9 +25,10 @@ namespace Game_Center.Projects
             InitializeComponent();
         }
 
-        public void OnStart(string title, string description, ImageSource imgSrc, Window proj)
+        public void OnStart(string title, string description, string technologies, ImageSource imgSrc, Window proj)
         {
             TitleLabel.Content = title;
+            ProjectTechnologies.Text=technologies;
             ProjectText.Text = description;
             ProjectImage.Source = imgSrc;
             currentProject=proj;

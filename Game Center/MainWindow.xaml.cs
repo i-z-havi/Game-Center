@@ -77,7 +77,7 @@ namespace Game_Center
         {
             UserManagement management = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("User Management", "This is the page you open to manage users. Surprising, I know.", Image1.Source, management);
+            presentationPage.OnStart("User Management", "This is the page you open to manage users. Surprising, I know.","File Manipulation, JSON, WPF", Image1.Source, management);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -87,7 +87,7 @@ namespace Game_Center
         {
             ToDoList todoListProject = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("To Do List", "A simple to do list with the ability to edit and finish tasks.", Image2.Source, todoListProject);
+            presentationPage.OnStart("To Do List", "A simple to do list with the ability to edit and finish tasks.", "File Manipulation, JSON, WPF", Image2.Source, todoListProject);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -99,7 +99,7 @@ namespace Game_Center
         {
             CurrencyConverterView currencyConverter = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Currency Converter", "A tool that show the value of a currency after conversion.", Image3.Source, currencyConverter);
+            presentationPage.OnStart("Currency Converter", "A tool that show the value of a currency after conversion.","API, WPF", Image3.Source, currencyConverter);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -108,7 +108,7 @@ namespace Game_Center
         {
             TicTacToe tictac = new TicTacToe();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Tic Tac Toe", "The classic childhood game, Tic Tac Toe! (For legal reasons we must clarify we are in no way affiliated with the Tic Tac brand, or toes.)", Image4.Source, tictac);
+            presentationPage.OnStart("Tic Tac Toe", "The classic childhood game, Tic Tac Toe! (For legal reasons we must clarify we are in no way affiliated with the Tic Tac brand, or toes.)","WPF", Image4.Source, tictac);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -118,7 +118,7 @@ namespace Game_Center
         {
             CarGame car = new CarGame();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Car Game", "Drive around using the left and right arrow keys while avoiding the bombs!", Image5.Source, car);
+            presentationPage.OnStart("Car Game", "Drive around using the left and right arrow keys while avoiding the bombs!","WPF", Image5.Source, car);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -128,7 +128,7 @@ namespace Game_Center
         {
             Simon simon = new Simon();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Simon Says", "The hit game Simon Says, finally on computers! Beeping was removed after play testers went insane listening to beeps for hours on end.", Image6.Source, simon);
+            presentationPage.OnStart("Simon Says", "The hit game Simon Says, finally on computers! Beeping was removed after play testers went insane listening to beeps for hours on end.","WPF, Threads", Image6.Source, simon);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -139,7 +139,7 @@ namespace Game_Center
         {
             MusicProject music = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!", Image7.Source, music);
+            presentationPage.OnStart("Music Game", "A game inspired somewhat by the Mario Paint Composer! Make your own songs, save them to a file, and send the file to friends to brag about your musical genius!","WPF, JSON, File Manipulation, ", Image7.Source, music);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -149,7 +149,7 @@ namespace Game_Center
         {
             CurvePage curve = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This is what Leap Frog started off as, and I don't have the heart to delete it. Consider this an alpha for Leap Frog!", Image8.Source, curve);
+            presentationPage.OnStart("Curve Game", "Left click on the image, drag your mouse to the bottom left, and watch a curve appear based on the line you made! This is what Leap Frog started off as, and I don't have the heart to delete it. Consider this an alpha for Leap Frog!","WPF, Bezier Curves", Image8.Source, curve);
             Hide();
             presentationPage.ShowDialog();
             Show();
@@ -159,7 +159,7 @@ namespace Game_Center
         {
             LeapFrog frog = new();
             ProjectPresentationPage presentationPage = new();
-            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points. All art was done by me.", Image9.Source, frog);
+            presentationPage.OnStart("Leap Frog", "Left click on the frogs face, drag your mouse to the bottom left, and try to launch it onto the lilypad to get a point! Touching the spikes is a game over, and you win at 10 points. All art was done by me.","WPF, Bezier Curves, MSPaint", Image9.Source, frog);
             Hide();
             presentationPage.ShowDialog();
             Show();

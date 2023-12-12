@@ -37,24 +37,10 @@ namespace Game_Center.Projects.MusicProject
         private void InitializeSong()
         {
             _song=new Song();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
-            _song.AddNote();
+            for (int i=0; i<20; i++)
+            {
+                _song.AddNote();
+            }
             SongGUI.ItemsSource = _song.songNotes;
             _di = new DirectoryInfo("songsfolder");
             _di.Create();
@@ -156,7 +142,7 @@ namespace Game_Center.Projects.MusicProject
                         _song.UpdateNote(220, noteToUpdate.Id);
                         break;
                     case "_N1":
-                        _song.UpdateNote(0, noteToUpdate.Id);
+                        _song.UpdateNote(37, noteToUpdate.Id);
                         break;
                 }
             }
